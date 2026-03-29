@@ -56,9 +56,10 @@ img {
 }
 
 .page {
+  position: relative;
   width: min(1440px, calc(100% - 56px));
   margin-inline: auto;
-  padding: 32px 0 24px;
+  padding: 28px 0 24px;
 }
 
 .hero {
@@ -67,7 +68,7 @@ img {
   align-items: center;
   gap: clamp(36px, 4.6vw, 88px);
   min-height: calc(100vh - 56px);
-  padding: clamp(12px, 2vw, 24px) 0;
+  padding: clamp(52px, 5vw, 86px) 0 clamp(12px, 2vw, 24px);
 }
 
 .hero-copy {
@@ -75,44 +76,34 @@ img {
   animation: fade-up 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.brand-chip {
+.site-brand {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  min-height: 56px;
-  padding: 8px 14px 8px 8px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.02);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 0;
 }
 
-.brand-logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  object-fit: cover;
+.site-brand-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
-.brand-label {
+.site-brand-label {
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
-.eyebrow {
-  display: inline-block;
-  color: var(--muted);
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  margin-top: 22px;
-}
-
 .hero h1 {
-  margin: 16px 0 0;
+  margin: 0;
   font-size: clamp(4.3rem, 8.6vw, 8.8rem);
   line-height: 0.86;
   letter-spacing: -0.11em;
@@ -216,6 +207,7 @@ img {
     grid-template-columns: 1fr;
     min-height: auto;
     gap: 20px;
+    padding-top: clamp(58px, 8vw, 84px);
   }
 
   .hero-copy {
@@ -239,20 +231,24 @@ img {
 
   .hero {
     gap: 12px;
+    padding-top: 64px;
   }
 
   .hero h1 {
     font-size: clamp(3.4rem, 16vw, 6rem);
   }
 
-  .brand-chip {
-    min-height: 52px;
+  .site-brand {
+    gap: 10px;
   }
 
-  .brand-logo {
+  .site-brand-logo {
     width: 36px;
     height: 36px;
-    border-radius: 10px;
+  }
+
+  .site-brand-label {
+    font-size: 0.78rem;
   }
 
   .download-button {
